@@ -1,0 +1,33 @@
+{
+  "@@last_modified": "2018-12-16T14:55:33.523591",
+  "title": "Contact Us",
+  "@title": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnsubmit": "Submit",
+  "@btnsubmit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "locale": "en",
+  "@locale": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lblname": "Name",
+  "@lblname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lblphone": "Phone",
+  "@lblphone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lblemail": "Email",
+  "@lblemail": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

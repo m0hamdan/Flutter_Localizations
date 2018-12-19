@@ -1,0 +1,33 @@
+{
+  "@@last_modified": "2018-12-16T14:55:33.523591",
+  "title": "اتصل بنا",
+  "@title": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnsubmit": "أرسل",
+  "@btnsubmit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "locale": "ar",
+  "@locale": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lblname": "الاسم",
+  "@lblname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lblphone": "رقم الهاتف",
+  "@lblphone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lblemail": "البريد الإلكتروني",
+  "@lblemail": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
