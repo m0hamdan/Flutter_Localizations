@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'l10n/messages_all.dart';
@@ -62,4 +64,25 @@ class SpecificLocalizationDelegate
 
   @override
   bool shouldReload(LocalizationsDelegate<AppLocalizations> old) => true;
+}
+
+class FallbackCupertinoLocalisationsDelegate extends LocalizationsDelegate<CupertinoLocalizations> {
+  const FallbackCupertinoLocalisationsDelegate();
+
+  @override
+  bool isSupported(Locale locale) => ['en', 'ar'].contains(locale.languageCode);
+
+  @override
+  Future<CupertinoLocalizations> load(Locale locale) => SynchronousFuture<_DefaultCupertinoLocalizations>(_DefaultCupertinoLocalizations(locale));
+
+  @override
+  bool shouldReload(FallbackCupertinoLocalisationsDelegate old) => false;
+}
+
+class _DefaultCupertinoLocalizations extends DefaultCupertinoLocalizations {
+  final Locale locale;
+  
+  _DefaultCupertinoLocalizations(this.locale);
+
+ 
 }
