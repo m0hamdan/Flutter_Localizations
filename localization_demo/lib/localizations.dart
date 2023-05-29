@@ -1,20 +1,16 @@
 import 'dart:async';
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'l10n/messages_all.dart';
 
 class AppLocalizations {
   static AppLocalizations of(BuildContext context) {
-    return Localizations.of<AppLocalizations>(context, AppLocalizations);
+    return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
   }
 
   static Future<AppLocalizations> load(Locale locale) {
-    final String name =
-        locale.countryCode == null ? locale.languageCode : locale.toString();
+    final String name = locale.countryCode == null ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
 
     return initializeMessages(localeName).then((bool _) {
@@ -22,7 +18,6 @@ class AppLocalizations {
       return new AppLocalizations();
     });
   }
- 
 
   String get title {
     return Intl.message('Contact Us', name: 'title');
@@ -49,8 +44,7 @@ class AppLocalizations {
   }
 }
 
-class SpecificLocalizationDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class SpecificLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
   final Locale overriddenLocale;
 
   SpecificLocalizationDelegate(this.overriddenLocale);
@@ -59,8 +53,7 @@ class SpecificLocalizationDelegate
   bool isSupported(Locale locale) => overriddenLocale != null;
 
   @override
-  Future<AppLocalizations> load(Locale locale) =>
-      AppLocalizations.load(overriddenLocale);
+  Future<AppLocalizations> load(Locale locale) => AppLocalizations.load(overriddenLocale);
 
   @override
   bool shouldReload(LocalizationsDelegate<AppLocalizations> old) => true;
@@ -73,7 +66,8 @@ class FallbackCupertinoLocalisationsDelegate extends LocalizationsDelegate<Cuper
   bool isSupported(Locale locale) => ['en', 'ar'].contains(locale.languageCode);
 
   @override
-  Future<CupertinoLocalizations> load(Locale locale) => SynchronousFuture<_DefaultCupertinoLocalizations>(_DefaultCupertinoLocalizations(locale));
+  Future<CupertinoLocalizations> load(Locale locale) =>
+      SynchronousFuture<_DefaultCupertinoLocalizations>(_DefaultCupertinoLocalizations(locale));
 
   @override
   bool shouldReload(FallbackCupertinoLocalisationsDelegate old) => false;
@@ -81,8 +75,6 @@ class FallbackCupertinoLocalisationsDelegate extends LocalizationsDelegate<Cuper
 
 class _DefaultCupertinoLocalizations extends DefaultCupertinoLocalizations {
   final Locale locale;
-  
-  _DefaultCupertinoLocalizations(this.locale);
 
- 
+  _DefaultCupertinoLocalizations(this.locale);
 }
